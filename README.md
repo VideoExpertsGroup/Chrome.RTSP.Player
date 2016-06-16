@@ -1,4 +1,4 @@
-# vxgplayer js
+Chrome RTSP player
 
 ## build
 
