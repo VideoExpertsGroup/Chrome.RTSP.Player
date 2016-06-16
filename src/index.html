@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Media Player PNaCl</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<meta name="author" content="videoexpertsgroup" />
+	<meta name="copyright" lang="ru" content="videoexpertsgroup" />
+	<meta name="description" content="Demo VXG Media Player for Chrome" />
+	<meta name="keywords" content=""/>
+	<!-- vxgplayer -->
+	<script type="text/javascript" src="vxgplayer.js"></script>
+	<link href="vxgplayer.css" rel="stylesheet"/>
+
+	<!-- demo page -->
+	<link href="demo.min.css" rel="stylesheet"/>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link href="zenburn.min.css" rel="stylesheet">
+	<script src="highlight.min.js"></script>
+	<script>
+		hljs.initHighlightingOnLoad();
+		var indexPlayer = 1;
+		function createPlayer(){
+			indexPlayer++;
+			var playerId = 'vxg_media_player' + indexPlayer;
+			var div = document.createElement('div');
+			div.setAttribute("id", playerId);
+			div.setAttribute("class", "vxgplayer");
+			var runtimePlayers = document.getElementById('runtimePlayers');
+			runtimePlayers.appendChild(div);
+			vxgplayer(playerId, {
+				url: '',
+				nmf_path: 'media_player.nmf',
+				nmf_src: 'pnacl/Release/media_player.nmf',
+				latency: 300000,
+				aspect_ratio_mode: 1,
+				autohide: 3,
+				controls: true,
+				avsync: true,
+				autoreconnect: 1
+			}).ready(function(){
+				console.log(' =>ready player '+playerId);
+				vxgplayer(playerId).src(document.getElementById('url_input').value);
+				vxgplayer(playerId).play();
+				console.log(' <=ready player '+playerId);
+			});
+		}
+	</script>
+</head>
+<body bgcolor="#F6F6F6">
+	
+		<div class="menu-fixed">
+			<div class="menu">
+				<div class="menu-left">
+					<a href="?">VXG Media Player (%vxg_version%)</a>
+				</div>
+				<div class="menu-right">
+					<a class="menu-item-right" href="#demo">Demo</a>
+					<a class="menu-item-right" href="#download">Download</a>
+					<a class="menu-item-right" href="#support">Support</a>
+					<a class="menu-item-right" href="#jsapi">API</a>
+				</div>
+			</div>
+		</div>
+		<div class="content-absolute">
+			<div class="content">
+				<a class="link-top" name="demo">.</a>
+				<h1>Demo</h1>
+				<input id="url_input" type="text" size="60" value="rtsp://184.72.239.149/vod/mp4:BigBuckBunny_115k.mov">
+				<button onclick="vxgplayer('vxg_media_player1').src(document.getElementById('url_input').value);">Set</button>
+				<br>
+				Max latency(ms):<input id="url_latency" type="number" size="5" value="300000"><button onclick="vxgplayer('vxg_media_player1').latency(document.getElementById('url_latency').value);">Set</button>
+				<br>
+				<button onclick="vxgplayer('vxg_media_player1').aspectRatioMode(1);">setAspectRatio(Fit-to-Screen) -> true</button>
+				<button onclick="vxgplayer('vxg_media_player1').aspectRatioMode(2);">setAspectRatio(Crop) -> true</button>
+				<button onclick="vxgplayer('vxg_media_player1').aspectRatio(false);">setAspectRatio -> false</button>
+				<button onclick="document.getElementById('vxg_media_player1').style.display='none';">display=none</button>
+				<button onclick="document.getElementById('vxg_media_player1').style.display='inline-block';">display=inline-block</button>
+				<button onclick="document.getElementById('vxg_media_player1').style.visibility='hidden';">visibility=hidden</button>
+				<button onclick="document.getElementById('vxg_media_player1').style.visibility='';">visibility=''</button>
+				<button onclick="vxgplayer('vxg_media_player1').autoreconnect(1);">autoreconnect on</button>
+				<button onclick="vxgplayer('vxg_media_player1').autoreconnect(0);">autoreconnect off</button>
+				<button onclick="createPlayer();">create new player</button>
+				<br>
+
+				<div id="vxg_media_player1" class="vxgplayer" url="rtsp://184.72.239.149/vod/mp4:BigBuckBunny_115k.mov" aspect-ratio latency="3000000" autostart controls avsync></div>
+				<div id="runtimePlayers"></div>
+
+				<a class="link-top" name="support">.</a>
+				<h1>Support</h1>
+				<a href="http://www.videoexpertsgroup.com/chrome-media-player-plug-in/" target="_blank">Visit the Video Experts Group' Media Player Plug-in page for support</a>
+
+				<a class="link-top" name="download">.</a>
+				<h1>Download</h1>
+				<a href="vxgplayer.zip" target="_blank">vxgplayer.zip</a>
+				<p>Please note that you have to place the unzipped package on a Web Server. For testing it locally on your PC you have to run a Web Server on your local PC.
+					We recommend to use a single binary Web Server like <a target="_blank" href="https://www.cesanta.com/products#binary">Mongoose</a> for testing.
+					Just copy the Web Server binary into the unzipped package folder and run it.</p>
+				<a class="link-top" name="jsapi">.</a>
+				<h1>API</h1>
+				{{{content}}}
+			</div>
+		</div>
+
+                <script>
+                        console.log('===player.src='+vxgplayer('vxg_media_player1').src());
+                        console.log('===player.volume()='+vxgplayer('vxg_media_player1').volume());
+                        console.log('===player.autohide()='+vxgplayer('vxg_media_player1').autohide());
+                        console.log('===player.isMute()='+vxgplayer('vxg_media_player1').isMute());
+                        console.log('===player.isPlaying()='+vxgplayer('vxg_media_player1').isPlaying());
+                        console.log('===player.autoreconnect()='+vxgplayer('vxg_media_player1').autoreconnect());
+			vxgplayer('vxg_media_player1').onReadyStateChange(function(onreadyState){
+			    console.log("player LOADED: versionPLG=" + vxgplayer('vxg_media_player1').versionPLG()+" versionAPP="+vxgplayer('vxg_media_player1').versionAPP());
+			    vxgplayer('vxg_media_player1').play();
+			});
+			vxgplayer('vxg_media_player1').onError(function(onErr){
+			    console.log("player ERROR: " + vxgplayer('vxg_media_player1').error());
+			});
+                </script>
+</body>
+</html>

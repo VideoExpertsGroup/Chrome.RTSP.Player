@@ -1,0 +1,43 @@
+{
+  "name": "vxgplayer",
+  "version": "1.8.2",
+  "description": "VXG Media Player for chrome",
+  "scripts": {
+    "build": "node build.js %npm_package_version% $npm_package_version"
+  },
+  "keywords": [
+    "vxgplayer",
+    "rtsp",
+    "chrome"
+  ],
+  "repository": {
+    "type": "svn",
+    "url": "http://10.20.16.218/svn/RTSP/projects/android/MediaPlayerNaCl/vxg_genericjs"
+  },
+  "author": "Video Experts Group",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "browserify": "^11.1.0",
+    "browserify-shim": "^3.8.10",
+    "clean-css": "^3.4.9",
+    "uglify-js": "2.2.0",
+    "markdown-html": "0.0.8",
+    "replace": "0.3.0",
+    "mkdirp": "0.5.1",
+    "copyfiles": "0.2.1",
+    "trash-cli": "1.2.1",
+    "node-zip": "^1.1.1",
+    "renamer": "0.5.6",
+    "directory-copy": "0.1.0",
+    "promise": "7.1.1",
+    "fs": "^0.0.2",
+    "node-markdown": "^0.1.1"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "browserify-shim"
+    ]
+  }
+}
