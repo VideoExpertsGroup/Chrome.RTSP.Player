@@ -1,4 +1,8 @@
 # Chrome RTSP Player
+VXG Chrome Plugin - https://www.videoexpertsgroup.com/vxg-chrome-plugin/
+
+VXG website - https://www.videoexpertsgroup.com/
+
   Google Inc. has permanently banned NPAPI for Chrome browser making legacy media plugins including VLC nonfunctional.
   VXG Chrome RTSP Player is based on Google’s Native Client (NaCl) and Portable Native Client (PNaCl) architecture. 
   Fast plugin to playback network streams from IP cameras, video servers and surveillance systems. 
