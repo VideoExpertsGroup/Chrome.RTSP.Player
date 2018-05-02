@@ -1,13 +1,11 @@
-# Chrome RTSP Player
-VXG Chrome Plugin - https://www.videoexpertsgroup.com/vxg-chrome-plugin/
+# Chrome OS RTSP Player
+VXG Chrome OS Plugin - https://www.videoexpertsgroup.com/vxg-chrome-plugin/
 
 VXG website - https://www.videoexpertsgroup.com/
 
-  Google Inc. has permanently banned NPAPI for Chrome browser making legacy media plugins including VLC nonfunctional.
-  VXG Chrome RTSP Player is based on Google’s Native Client (NaCl) and Portable Native Client (PNaCl) architecture. 
-  Fast plugin to playback network streams from IP cameras, video servers and surveillance systems. 
+This Plugin is designed for Chrome OS. If you are interested in a cross-browser, cross-platform solution we would recommend using VXG Cloud Video or VXG Streaming Server. Both are available for download and testing from our dashboard https://dashboard.videoexpertsgroup.com. 
 
-  Key features: 
+  Key features of VXG streaming solutions: 
 *  Supported stream types: RTSP, RTMP, MMS, HLS, UDP and others.
 *  Supported video formats: H.264, MPEG-4, MPEG-2 and others.
 *  Supported audio formats: AAC, PCM, G711, MP3 and others. 
