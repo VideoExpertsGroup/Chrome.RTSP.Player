@@ -21,7 +21,7 @@
     "browserify": "^11.1.0",
     "browserify-shim": "^3.8.10",
     "clean-css": "^3.4.9",
-    "uglify-js": "2.2.0",
+    "uglify-js": "3.9.3",
     "markdown-html": "0.0.8",
     "replace": "0.3.0",
     "mkdirp": "0.5.1",
