@@ -20,7 +20,7 @@
     "babelify": "^6.3.0",
     "browserify": "^11.1.0",
     "browserify-shim": "^3.8.10",
-    "clean-css": "^3.4.9",
+    "clean-css": "^4.2.3",
     "uglify-js": "2.2.0",
     "markdown-html": "0.0.8",
     "replace": "0.3.0",
