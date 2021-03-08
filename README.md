@@ -1,6 +1,6 @@
 # Chrome OS RTSP Player
 
-Learn more about <a href="www.videoexpertsgroup.com">Streaming RTSP in Browser</a>
+Learn more about <a href="https://www.videoexpertsgroup.com">Streaming RTSP in Browser</a>
 
   Key features of VXG streaming solutions: 
 *  Supported stream types: RTSP, RTMP, MMS, HLS, UDP and others.
